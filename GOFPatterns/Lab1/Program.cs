@@ -10,8 +10,8 @@ public class Program
         while (true){
         Console.WriteLine("Enter name of pattern to demonstrate, exit to leave:");
             var patternName = Console.ReadLine();
-            if (patternName.ToLower() == "exit"){
-                return 0;
+            if (patternName == "" || patternName.ToLower() == "exit"){
+                return;
             }
             if (string.IsNullOrWhiteSpace(patternName))
             {

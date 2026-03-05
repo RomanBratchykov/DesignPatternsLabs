@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 
 namespace Lab1.Patterns
 {
-    public class Factory
+    public class Factory : IDemonstrate
     {
-        
+        public void Demonstrate()
+        {
+            Console.WriteLine("This is the Factory pattern demonstration.");
+        }
     }
 }

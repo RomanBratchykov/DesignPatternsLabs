@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 
 namespace Lab1.Patterns
 {
-    public class Builder
+    public class Builder : IDemonstrate
     {
-        
+        public void Demonstrate()
+        {
+            Console.WriteLine("This is the Builder pattern demonstration.");
+        }
     }
 }

@@ -7,10 +7,12 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Enter name of pattern to demonstrate:");
-        try
-        {
+        while (true){
+        Console.WriteLine("Enter name of pattern to demonstrate, exit to leave:");
             var patternName = Console.ReadLine();
+            if (patternName.ToLower() == "exit"){
+                return 0;
+            }
             if (string.IsNullOrWhiteSpace(patternName))
             {
                 Console.WriteLine("Pattern name cannot be empty.");
@@ -38,12 +40,6 @@ public class Program
         methodInfo.Invoke(patternInstance, null);
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"An error occurred: {ex.Message}");
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey(); 
-        }
+    }
     }
 }

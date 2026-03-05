@@ -24,7 +24,11 @@ namespace Lab1.Patterns
     {
         private static readonly Lazy<DatabaseConnection> _instance = 
             new Lazy<DatabaseConnection>(() => new DatabaseConnection());
-
+        // private static readonly SimpleSingleton _instance = new SimpleSingleton();
+        // public static SimpleSingleton Instance
+        // {
+        //     get { return _instance; }
+        // }
         private DatabaseConnection()
         {
             Console.WriteLine("Connecting to database");

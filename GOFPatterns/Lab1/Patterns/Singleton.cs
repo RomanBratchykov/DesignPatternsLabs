@@ -22,7 +22,8 @@ namespace Lab1.Patterns
     }
     public sealed class DatabaseConnection
     {
-        private static readonly Lazy<DatabaseConnection> _instance = 
+        private 
+         readonly static Lazy<DatabaseConnection> _instance = 
             new Lazy<DatabaseConnection>(() => new DatabaseConnection());
         // private static readonly SimpleSingleton _instance = new SimpleSingleton();
         // public static SimpleSingleton Instance
@@ -40,5 +41,7 @@ namespace Lab1.Patterns
         {
             Console.WriteLine($"      -> {componentName} is getting data from the shared Singleton connection.");
         }
+
+        
     }
 }

@@ -27,6 +27,8 @@ namespace Lab1.Patterns
             {
                 PhonePrototype clone = (PhonePrototype)this.MemberwiseClone();
                 clone.Proccesor = new Proccesor
+
+                
                 { Model = this.Proccesor.Model, 
                 Cores = this.Proccesor.Cores };
                 return clone;

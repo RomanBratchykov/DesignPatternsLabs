@@ -15,6 +15,19 @@ namespace Lab1.Patterns
             Console.WriteLine($"Phone with CPU: {CPU}, RAM: {RAM}GB, Storage: {Storage}GB");
         }
     }
+    public class Tablet
+    {
+        public string CPU {get; set;} = string.Empty;
+        public int RAM {get; set;}
+        public int Storage {get; set;}
+        public void Display()
+        {
+            Console.WriteLine($"Tablet with CPU: {CPU}, RAM: {RAM}GB, Storage: {Storage}GB");
+        }
+        public Tablet(
+            string cpu = "null", int ram = 10, int storage = 256
+        ){} 
+    }
     public class PhoneBuilder
     {
         private Smartphone _phone = new Smartphone();
@@ -42,6 +55,8 @@ namespace Lab1.Patterns
     {
         public void Demonstrate()
         {
+            Tablet tablet = new Tablet(storage: 512, cpu: "Apple M1");
+
             Smartphone phone = new PhoneBuilder()
                 .SetCPU("Snapdragon 888")
                 .SetRAM(8)

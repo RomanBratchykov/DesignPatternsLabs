@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Lab2.Decorator
 {
-    public class FileDataSource
+    public class FileDataSource : IDataSource
     {
          private string _stored = "";
         public void   Write(string data) => _stored = data;

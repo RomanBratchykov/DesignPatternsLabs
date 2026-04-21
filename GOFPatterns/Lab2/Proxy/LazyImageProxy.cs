@@ -13,7 +13,9 @@ namespace Lab2.Proxy
 
         public void Display()
         {
-            _real ??= new RealImage(_filename); // load on first use
+            Console.WriteLine($"[LazyProxy] Requesting image: {_filename}");
+
+            _real ??= new RealImage(_filename);
             _real.Display();
         }
     }

@@ -12,6 +12,7 @@ namespace Lab2.Proxy
 
         public void Display()
         {
+            Console.WriteLine($"[LoggingProxy] Requesting image: ");
             Console.WriteLine($"[{DateTime.Now:T}] Display called");
             _inner.Display();
             Console.WriteLine($"[{DateTime.Now:T}] Display finished");

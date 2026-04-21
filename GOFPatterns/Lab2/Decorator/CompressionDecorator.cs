@@ -12,7 +12,7 @@ namespace Lab2.Decorator
         public override void Write(string data)
         {
             Console.WriteLine("[Compressing data...]");
-            base.Write(data); // simplified — real impl would compress bytes
+            base.Write(data); 
         }
     
         public override string Read()

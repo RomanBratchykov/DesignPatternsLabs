@@ -17,7 +17,7 @@ namespace Lab2.Composite
     
         public void Print(string indent = "")
         {
-            Console.WriteLine($"{indent}📁 {Name}");
+            Console.WriteLine($"Folder: {indent} {Name}");
             foreach (var child in _children)
                 child.Print(indent + "  ");
         }

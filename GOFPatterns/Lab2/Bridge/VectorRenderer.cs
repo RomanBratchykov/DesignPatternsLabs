@@ -8,8 +8,8 @@ namespace Lab2.Bridge
     public class VectorRenderer : IRenderer
     {
         public void RenderCircle(float r)
-            => Console.WriteLine($"Rasterizing circle r={r}");
+            => Console.WriteLine($"Vectorizing circle r={r}");
         public void RenderSquare(float s)
-            => Console.WriteLine($"Rasterizing square s={s}");
+            => Console.WriteLine($"Vectorizing square s={s}");
     }
 }

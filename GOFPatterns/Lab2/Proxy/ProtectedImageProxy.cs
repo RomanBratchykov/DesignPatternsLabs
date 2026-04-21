@@ -15,9 +15,11 @@ namespace Lab2.Proxy
 
         public void Display()
         {
+            Console.WriteLine($"[ProtectedProxy] Requesting image:");
+
             if (_role != "admin")
-                throw new UnauthorizedAccessException(
-                    "Only admins can view this image.");
+                Console.WriteLine(
+                    "Error:Only admins can view this image.");
             _real.Display();
         }
     }

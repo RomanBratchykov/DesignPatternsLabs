@@ -14,6 +14,7 @@ namespace Lab2.Proxy
 
         public void Display()
         {
+            Console.WriteLine($"[CachingProxy] Requesting image: {_filename}");
             if (!_cache.TryGetValue(_filename, out var img))
             {
                 img = new RealImage(_filename);

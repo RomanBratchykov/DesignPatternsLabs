@@ -95,6 +95,17 @@ Strategy/
  IShippingStrategy.cs
  ShippingCostCalculator.cs
  StandardShippingStrategy.cs
+TemplateMethod/
+ InventoryReportGenerator.cs
+ ReportGenerator.cs
+ SalesReportGenerator.cs
+Visitor/
+ DescriptionVisitor.cs
+ IVisitable.cs
+ IVisitor.cs
+ OrderItem.cs
+ PriceVisitor.cs
+ ShippingItem.cs
 
 [metadataReferences]
 <DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.7/ref/net10.0/

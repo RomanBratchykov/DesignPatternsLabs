@@ -5,6 +5,8 @@ using Lab2.Iterator;
 using Lab2.Observer;
 using Lab2.State;
 using Lab2.Strategy;
+using Lab2.TemplateMethod;
+using Lab2.Visitor;
 
 namespace Lab2
 {
@@ -77,8 +79,6 @@ namespace Lab2
                         break;
                     case "4":
                     case "5":
-                    case "9":
-                    case "10":
                         Console.WriteLine("Folder renamed. Demo code for this pattern is not implemented yet.");
                         break;
                     case "6":
@@ -111,6 +111,42 @@ namespace Lab2
 
                             calculator.SetStrategy(new ExpressShippingStrategy());
                             Console.WriteLine($"{calculator.StrategyName} shipping: {calculator.Calculate(orderTotal):C}");
+                        }
+                        break;
+                    case "9":
+                        {
+                            ReportGenerator sales = new SalesReportGenerator();
+                            ReportGenerator inventory = new InventoryReportGenerator();
+
+                            Console.WriteLine("Sales report:");
+                            sales.Generate();
+
+                            Console.WriteLine("Inventory report:");
+                            inventory.Generate();
+                        }
+                        break;
+                    case "10":
+                        {
+                            IVisitable[] items =
+                            {
+                                new OrderItem("Keyboard", 50m),
+                                new OrderItem("Mouse", 25m),
+                                new ShippingItem("Standard", 10m)
+                            };
+
+                            var priceVisitor = new PriceVisitor();
+                            foreach (var item in items)
+                            {
+                                item.Accept(priceVisitor);
+                            }
+
+                            Console.WriteLine($"Total: {priceVisitor.Total:C}");
+
+                            var descriptionVisitor = new DescriptionVisitor();
+                            foreach (var item in items)
+                            {
+                                item.Accept(descriptionVisitor);
+                            }
                         }
                         break;
                     default:

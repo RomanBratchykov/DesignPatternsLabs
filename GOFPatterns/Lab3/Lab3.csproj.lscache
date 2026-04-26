@@ -13,18 +13,18 @@ primary
 lastDtbSucceeded
 
 [properties]
-AssemblyName=Lab1
+AssemblyName=Lab3
 CommandLineArgsForDesignTimeEvaluation=-langversion:14.0 -define:TRACE
 CompilerGeneratedFilesOutputPath=
 MaxSupportedLangVersion=14.0
 ProjectAssetsFile=<PATH>obj/project.assets.json
-RootNamespace=Lab1
+RootNamespace=Lab3
 RunAnalyzers=
 RunAnalyzersDuringLiveAnalysis=
 SolutionPath=<PATH>../GOFPatterns.sln
 TargetFrameworkIdentifier=.NETCoreApp
-TargetPath=<PATH>bin/Debug/net10.0/Lab1.dll
-TargetRefPath=<PATH>obj/Debug/net10.0/ref/Lab1.dll
+TargetPath=<PATH>bin/Debug/net10.0/Lab3.dll
+TargetRefPath=<PATH>obj/Debug/net10.0/ref/Lab3.dll
 TemporaryDependencyNodeTargetIdentifier=net10.0
 
 [commandLineArguments]
@@ -44,8 +44,8 @@ TemporaryDependencyNodeTargetIdentifier=net10.0
 /debug:portable
 /filealign:512
 /optimize-
-/out:obj\Debug\net10.0\Lab1.dll
-/refout:obj\Debug\net10.0\refint\Lab1.dll
+/out:obj\Debug\net10.0\Lab3.dll
+/refout:obj\Debug\net10.0\refint\Lab3.dll
 /target:exe
 /warnaserror-
 /utf8output
@@ -54,19 +54,47 @@ TemporaryDependencyNodeTargetIdentifier=net10.0
 /warnaserror+:NU1605,SYSLIB0011
 
 [sourceFiles]
+ChainOfResponsibility/
+ IOrderHandler.cs
+ OrderHandlerBase.cs
+ OrderRequest.cs
+ PaymentCheckHandler.cs
+ ShippingHandler.cs
+ StockCheckHandler.cs
+Command/
+ ICommand.cs
+ Light.cs
+ RemoteControl.cs
+ TurnOffCommand.cs
+ TurnOnCommand.cs
+Iterator/
+ Book.cs
+ BookCollection.cs
+ BookIterator.cs
+ IIterator.cs
 obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
- Lab1.AssemblyInfo.cs
- Lab1.GlobalUsings.g.cs
-Patterns/
- AbstractFactory.cs
- Builder.cs
- Factory.cs
- FactoryMethod.cs
- IDemonstrate.cs
- Prototype.cs
- Singleton.cs
+ Lab3.AssemblyInfo.cs
+ Lab3.GlobalUsings.g.cs
+Observer/
+ CustomerObserver.cs
+ IObserver.cs
+ ISubject.cs
+ OrderStatusSubject.cs
+ WarehouseObserver.cs
 Program.cs
+State/
+ DeliveredOrderState.cs
+ IOrderState.cs
+ NewOrderState.cs
+ OrderContext.cs
+ PaidOrderState.cs
+ ShippedOrderState.cs
+Strategy/
+ ExpressShippingStrategy.cs
+ IShippingStrategy.cs
+ ShippingCostCalculator.cs
+ StandardShippingStrategy.cs
 
 [metadataReferences]
 <DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.7/ref/net10.0/
@@ -252,4 +280,4 @@ Program.cs
 
 [analyzerConfigFiles]
 <DOTNET>/sdk/10.0.107/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
-obj/Debug/net10.0/Lab1.GeneratedMSBuildEditorConfig.editorconfig
+obj/Debug/net10.0/Lab3.GeneratedMSBuildEditorConfig.editorconfig

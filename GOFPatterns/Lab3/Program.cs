@@ -1,6 +1,10 @@
 ﻿using System;
 using Lab2.ChainOfResponsibility;
 using Lab2.Command;
+using Lab2.Iterator;
+using Lab2.Observer;
+using Lab2.State;
+using Lab2.Strategy;
 
 namespace Lab2
 {
@@ -56,14 +60,58 @@ namespace Lab2
                         }
                         break;
                     case "3":
+                        {
+                            var catalog = new BookCollection();
+                            catalog.Add(new Book("Design Patterns"));
+                            catalog.Add(new Book("Clean Code"));
+                            catalog.Add(new Book("Refactoring"));
+
+                            var iterator = catalog.CreateIterator();
+                            Console.WriteLine("Catalog:");
+                            while (iterator.HasNext())
+                            {
+                                var book = iterator.Next();
+                                Console.WriteLine($"- {book.Title}");
+                            }
+                        }
+                        break;
                     case "4":
                     case "5":
-                    case "6":
-                    case "7":
-                    case "8":
                     case "9":
                     case "10":
                         Console.WriteLine("Folder renamed. Demo code for this pattern is not implemented yet.");
+                        break;
+                    case "6":
+                        {
+                            var subject = new OrderStatusSubject("A-1003");
+                            subject.Attach(new CustomerObserver("Olena"));
+                            subject.Attach(new WarehouseObserver());
+
+                            subject.SetStatus("Paid");
+                            subject.SetStatus("Shipped");
+                        }
+                        break;
+                    case "7":
+                        {
+                            var order = new OrderContext("A-1002");
+
+                            order.Next();
+                            order.Next();
+                            order.Next();
+                            order.Next();
+                        }
+                        break;
+                    case "8":
+                        {
+                            var orderTotal = 120m;
+                            var calculator = new ShippingCostCalculator(new StandardShippingStrategy());
+
+                            Console.WriteLine($"Order total: {orderTotal:C}");
+                            Console.WriteLine($"{calculator.StrategyName} shipping: {calculator.Calculate(orderTotal):C}");
+
+                            calculator.SetStrategy(new ExpressShippingStrategy());
+                            Console.WriteLine($"{calculator.StrategyName} shipping: {calculator.Calculate(orderTotal):C}");
+                        }
                         break;
                     default:
                         Console.WriteLine("Unknown option. Please choose 0..10.");

@@ -72,6 +72,14 @@ Iterator/
  BookCollection.cs
  BookIterator.cs
  IIterator.cs
+Mediator/
+ ChatRoom.cs
+ ChatUser.cs
+ IChatMediator.cs
+Memento/
+ TextEditor.cs
+ TextEditorHistory.cs
+ TextEditorMemento.cs
 obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
  Lab3.AssemblyInfo.cs

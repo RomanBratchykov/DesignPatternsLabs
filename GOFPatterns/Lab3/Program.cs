@@ -2,6 +2,8 @@
 using Lab2.ChainOfResponsibility;
 using Lab2.Command;
 using Lab2.Iterator;
+using Lab2.Mediator;
+using Lab2.Memento;
 using Lab2.Observer;
 using Lab2.State;
 using Lab2.Strategy;
@@ -78,8 +80,43 @@ namespace Lab2
                         }
                         break;
                     case "4":
-                    case "5":
-                        Console.WriteLine("Folder renamed. Demo code for this pattern is not implemented yet.");
+                            {
+                                var room = new ChatRoom();
+                                var alice = new ChatUser("Alice");
+                                var bob = new ChatUser("Bob");
+                                var carol = new ChatUser("Carol");
+
+                                room.Register(alice);
+                                room.Register(bob);
+                                room.Register(carol);
+
+                                alice.SendBroadcast("Hello everyone!");
+                                bob.SendTo("Alice", "Hi Alice, welcome to the room.");
+                                carol.SendTo("Bob", "I can see your message too.");
+                            }
+                            break;
+                        case "5":
+                            {
+                                var editor = new TextEditor();
+                                var history = new TextEditorHistory();
+
+                                editor.Text = "Hello";
+                                history.Save(editor);
+                                Console.WriteLine($"Current text: {editor.Text}");
+
+                                editor.Text = "Hello, world";
+                                history.Save(editor);
+                                Console.WriteLine($"Current text: {editor.Text}");
+
+                                editor.Text = "Hello, world! This text will be undone.";
+                                Console.WriteLine($"Current text: {editor.Text}");
+
+                                history.Undo(editor);
+                                Console.WriteLine($"After undo: {editor.Text}");
+
+                                history.Undo(editor);
+                                Console.WriteLine($"After second undo: {editor.Text}");
+                            }
                         break;
                     case "6":
                         {

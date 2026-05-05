@@ -16,9 +16,7 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
-            while (true)
-            {
-                Console.WriteLine("Select a behavioral pattern to demonstrate:");
+            Console.WriteLine("Select a behavioral pattern to demonstrate:");
                 Console.WriteLine("1 - Chain of Responsibility");
                 Console.WriteLine("2 - Command");
                 Console.WriteLine("3 - Iterator");
@@ -30,7 +28,8 @@ namespace Lab2
                 Console.WriteLine("9 - Template Method");
                 Console.WriteLine("10 - Visitor");
                 Console.WriteLine("0 - Exit");
-
+            while (true)
+            {
                 var input = Console.ReadLine();
                 if (input == "0")
                 {

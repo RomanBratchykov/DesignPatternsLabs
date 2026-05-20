@@ -17,6 +17,7 @@ internal static class Strategy
         Console.WriteLine($"Order total: {orderTotal:C}");
         PrintShipping("standard", strategies, orderTotal);
         PrintShipping("express", strategies, orderTotal);
+        PrintShipping("economy", strategies, orderTotal);
     }
 
     private static void PrintShipping(

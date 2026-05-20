@@ -5,7 +5,7 @@ namespace Lab6
 {
     public class DatabaseConnection
     {
-        public void Connect() => Console.WriteLine("Підключено до бази даних.");
+        public void Connect() => Console.WriteLine(".");
     }
 
     public class RepositoryA { public RepositoryA(DatabaseConnection db) { } }

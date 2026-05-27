@@ -17,7 +17,8 @@ internal static class FactoryMethod
         var creators = new[]
         {
             factoryMethod("phone"),
-            factoryMethod("laptop")
+            factoryMethod("laptop"),
+            factoryMethod("headphones")
         };
 
         foreach (var create in creators)

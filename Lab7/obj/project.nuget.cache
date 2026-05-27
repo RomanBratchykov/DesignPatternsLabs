@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TqrAxBqfDnA=",
+  "success": true,
+  "projectFilePath": "D:\\Labs\\DesignPatternsLabs\\Lab7\\Lab7.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Roman\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
